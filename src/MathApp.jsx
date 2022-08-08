@@ -1,9 +1,13 @@
-import { LoginPage, RegisterPage } from "./auth/pages"
+import {LoginPage} from './auth/pages';
+import { AppRouter } from './router';
 
 export const MathApp = () => {
   return (
     <>
-      <RegisterPage />
+      {/*
+    <LoginPage />
+      */}
+      <AppRouter />
     </>
   )
 }
