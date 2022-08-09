@@ -31,19 +31,19 @@ export const LoginPage = () => {
         <div className='form-group'>
           <label>
             <input type='checkbox' />
-            Recuérdame
+            &nbsp;Recuérdame
           </label>
         </div>
 
         <div className='buttons'>
-          <button
-            type='button'
-            className='btn normal'
-        >
-            <Link to='/' className='text-white'>
+          <Link to='/' className='text-white'>
+            <button
+              type='button'
+              className='btn normal'
+            >
               Iniciar sesión
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
 
         <p className='register-btn'>

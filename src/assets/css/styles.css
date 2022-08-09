@@ -407,6 +407,8 @@ aside .copyright-text {
 
 .login .box .form .form-control:focus {
   outline: none;
+  border-bottom: solid 1px var( --main-color );
+  transition: all ease 0.5s;
 }
 
 .login .box .form label {
@@ -461,6 +463,10 @@ aside .copyright-text {
 .register-btn a {
   color: var( --main-color );
   cursor: pointer;
+}
+
+.pr-4 {
+  padding-right: 4px;
 }
 
 /* Responsive*/

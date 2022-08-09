@@ -47,7 +47,7 @@ export const RegisterPage = () => {
         <div className='form-group'>
           <label>
             <input type='checkbox' />
-            Acepto los términos y condiciones
+            &nbsp;Acepto los términos y condiciones
           </label>
         </div>
 
