@@ -1,12 +1,12 @@
 import { Title } from '../components';
 import { MathLayout } from '../layout/MathLayout';
 
-export const MathPage = () => {
+export const PracticePage = () => {
   return (
     <MathLayout>
       <section className="about section">
         <div className="container">
-          <Title text='Inicio' />
+          <Title text='Practica' />
         </div>
       </section>
     </MathLayout>

@@ -1,8 +1,16 @@
+import { Link, useNavigate } from 'react-router-dom';
+// Layout
 import { AuthLayout } from '../layout';
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const onRegister = () => {
+    navigate( '/auth/register' );
+  }
+
   return (
-    <AuthLayout title='Login'>
+    <AuthLayout title='Bienvenido'>
       <form>
         <div className='form-group'>
           <input 
@@ -31,13 +39,15 @@ export const LoginPage = () => {
           <button
             type='button'
             className='btn normal'
-          >
-            Iniciar sesión
+        >
+            <Link to='/' className='text-white'>
+              Iniciar sesión
+            </Link>
           </button>
         </div>
 
         <p className='register-btn'>
-          <a>
+          <a onClick={ onRegister }>
             ¿No tienes una cuenta?
           </a>
         </p>

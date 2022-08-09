@@ -1,6 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+// Layout
 import { AuthLayout } from '../layout';
 
 export const RegisterPage = () => {
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    navigate( '/auth/login' );
+  }
+
   return (
     <AuthLayout title='Crea una cuenta'>
       <form>
@@ -53,7 +61,10 @@ export const RegisterPage = () => {
         </div>
 
         <p className='register-btn'>
-          <a>
+          <a 
+            onClick={ onLogin }
+            className='cursor-pointer'
+          >
             ¿Ya tienes una cuenta?
           </a>
         </p>
