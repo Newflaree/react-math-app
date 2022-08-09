@@ -11,6 +11,7 @@
   --main-color: #2196f3;
   --main-dark: #0D3A5C;
   --main-light: #DAEAF5;
+  --error-color: red
 }
 /*------------------------------------*/
 /*              Variables             */
@@ -186,6 +187,114 @@ aside .nav-toggler.open span::after {
 aside .copyright-text {
   font-size: 13px;
   color: #7d7d7d;
+}
+
+/* Unit card section */
+.about .container {
+  padding-bottom: 40px;
+}
+
+.service-item {
+  -ms-flex: 0 0 33.33%;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+  display: -ms-flexblox;
+  display: flex;
+}
+
+.service-item .service-item-inner {
+  background-color: #fef9ff; 
+  border: 1px solid #d5d4e4;
+  border-radius: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+} 
+
+.service-item .service-item-inner:hover {
+  -webkit-box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}  
+
+.service-item .service-item-inner:hover {
+  -webkit-box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.service-item .service-item-inner .icon {
+  height: 60px;
+  width: 60px;
+  display: block;
+  margin: 0px auto 30px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.service-item .service-item-inner:hover .icon {
+  background-color: var( --main-color );
+}
+
+.service-item .service-item-inner .icon .fas {
+  font-size: 40px;
+  line-height: 60px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: var( --main-color );
+} 
+
+.service-item .service-item-inner:hover .icon .fas {
+  font-size: 30px;
+  color: #fff;
+} 
+
+.service-item .service-item-inner h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #2f2e4d;
+  font-weight: 700;
+}
+
+.service-item .service-item-inner p {
+  font-size: 16px;
+  color: #4f4e70;
+  line-height: 25px;
+  margin: 0px;
+}
+
+/* Responsive */
+@media ( max-width: 1199px ) {
+  .section .container {
+    padding-top: 70px;
+  }
+
+  .section {
+    left: 0px;
+  }
+
+  .section.open {
+    left: 270px;
+  }
+}
+
+@media ( max-width: 991px ){
+  .service-item {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+} 
+
+@media ( max-width: 767px ) {
+  .service-item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* Responsive */
@@ -871,14 +980,10 @@ input, textarea, select {
   margin: 0px;
 }
 
-
-
 /* Service Section */
-
-
-
-
-
+.text-danger {
+  color: var( --error-color );
+}
 
 /* Portfolio Section */
 .portfolio .container {

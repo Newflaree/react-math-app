@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { menuItems } from './sidebar-data';
+// Test Data
+// TODO: Remove this when connected to the server
+import { menuItems } from '../../../data/provisional-data';
 
 export const SidebarNavbar = ({ onToggler }) => {
   return (
