@@ -6,7 +6,7 @@ export const SettingsPage = () => {
     <MathLayout>
       <section className="about section">
         <div className="container">
-          <Title text='Ajustas' />
+          <Title text='Ajustes' />
         </div>
       </section>
     </MathLayout>

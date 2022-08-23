@@ -16,6 +16,7 @@ export const MathPage = () => {
             {
               testItem.map( item => (
                 <UnitCard 
+                  key={ item.id }
                   title={ item.testTitle }
                   desc={ item.testDesc }
                   icon={ item.testIcon }
