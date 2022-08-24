@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { mathApi } from '../api';
-import { onChecking } from '../store';
+import {
+  clearErrorMessage,
+  onChecking,
+  onLogin,
+  onLogout
+} from '../store/auth';
 
 export const useAuthStore = () => {
   const { status, user, errorMessage } = useSelector( state => state.auth );
@@ -11,11 +16,15 @@ export const useAuthStore = () => {
     
     try {
       const { data } = await mathApi.post( '/auth/login', { email, password } );
-      console.log( data );
+      localStorage.setItem( 'token', data.token );
+      localStorage.setItem( 'token-init-date', new Date().getTime() );
+      dispatch( onLogin({ name: data.name, uid: data.user.uid }) )
 
     } catch ( err ) {
-      console.log( data );
-
+      dispatch( onLogout( err.response.data?.msg || '--' ) );
+      setTimeout( () => {
+        dispatch( clearErrorMessage() );
+      }, 10 );
     }
   }
 
@@ -25,16 +34,35 @@ export const useAuthStore = () => {
     try {
       const { data } = await mathApi.post( '/auth/register', { email, name, password } );
       console.log( data );
+    } catch ( err ) {
+      console.log( err );
+    }
+  }
+
+  const checkAuthToken = async () => {
+    const token = localStorage.getItem( 'token' );
+    if ( !token ) return dispatch( onLogout() );
+
+    try {
+      const { data } = await mathApi.get( 'auth/renew' );
+      localStorage.setItem( 'token', data.token );
+      localStorage.setItem( 'token-init-date', new Date().getTime() );
+      dispatch( onLogin({ name: data.name, uid: data.user.uid }) )
 
     } catch ( err ) {
-      console.log( data );
-
+      localStorage.clear();
+      dispatch( onLogout() );
     }
   }
 
   return {
     // Props
+    errorMessage,
+    status,
+    user,
+
     // Methods
+    checkAuthToken,
     startLogin,
     startRegister
   }
